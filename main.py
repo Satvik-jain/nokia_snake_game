@@ -24,5 +24,5 @@ while is_game_on:
     time.sleep(0.1)
 
     snake.move()
-
+    is_game_on = snake.check_wall()
 screen.exitonclick()

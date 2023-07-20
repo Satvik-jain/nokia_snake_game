@@ -3,6 +3,8 @@ from turtle import Turtle, Screen
 screen = Screen()
 starting_position = [(0, 0), (-20, 0), (-40, 0)]
 move_distance = 20
+
+
 class Snake:
     def __init__(self):
         self.segments = []
@@ -40,3 +42,10 @@ class Snake:
     def left(self):
         if self.segments[0].heading() != 0:
             self.segments[0].setheading(180)
+
+    def check_wall(self):
+        if self.segments[0].xcor() == 300 or self.segments[0].xcor() == -300 or \
+                self.segments[0].ycor() == 300 or self.segments[0].ycor() == -300:
+            return False
+        else:
+            return True
