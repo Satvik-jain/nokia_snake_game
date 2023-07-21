@@ -49,4 +49,7 @@ while is_game_on:
     if is_game_on:
         is_game_on = snake.check_wall()
 
+    if is_game_on == False:
+        scoreboard.gameover()
+
 screen.exitonclick()

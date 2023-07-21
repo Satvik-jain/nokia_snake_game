@@ -11,6 +11,11 @@ class ScoreBoard(Turtle):
         self.refresh()
         self.hideturtle()
 
+
+    def gameover(self):
+        self.home()
+        self.write("GAME OVER", align="center", font=("Arial", 30, "normal"))
+
     def add_score(self):
         self.score += 1
     def refresh(self):
