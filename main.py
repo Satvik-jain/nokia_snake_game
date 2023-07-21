@@ -33,6 +33,8 @@ while is_game_on:
     if snake.head.distance(eat.food) < 15:
         snake.add()
         eat.locate()
+        scoreboard.add_score()
+        scoreboard.refresh()
 
     screen.update()
     time.sleep(0.08)
