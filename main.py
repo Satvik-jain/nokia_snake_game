@@ -39,7 +39,6 @@ while is_game_on:
     snake.move()
 
     for snake_Part in [i for i in snake.segments[3:]]:
-        print(snake_Part)
         if  snake.head.distance(snake_Part) < 10:
             is_game_on = False
             break
