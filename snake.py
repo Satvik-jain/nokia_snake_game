@@ -1,7 +1,7 @@
 from turtle import Turtle, Screen
 
 screen = Screen()
-starting_position = [(0, 0), (-20, 0), (-40, 0),(-60,0),(-80,0),(-100,0),(-120,0),(-140,0),(-160,0)]
+starting_position = [(0, 0), (-20, 0), (-40, 0)]
 move_distance = 20
 
 

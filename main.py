@@ -28,8 +28,6 @@ while True:
         break
 
 while is_game_on:
-    print(snake.head.pos())
-    print(eat.food.pos())
     if snake.head.distance(eat.food) < 15:
         snake.add()
         eat.locate()
