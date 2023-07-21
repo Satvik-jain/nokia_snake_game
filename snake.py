@@ -1,7 +1,7 @@
 from turtle import Turtle, Screen
 
 screen = Screen()
-starting_position = [(0, 0), (-20, 0), (-40, 0)]
+starting_position = [(0, 0), (-20, 0), (-40, 0),(-60,0),(-80,0),(-100,0)]
 move_distance = 20
 
 
@@ -9,18 +9,26 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.create()
-
+        self.head = self.segments[0]
     def create(self):
         for position in starting_position:
             new = Turtle('square')
-            new.color('white')
+            new.color('green')
             new.penup()
             new.goto(position)
             self.segments.append(new)
 
+    def add(self):
+        new = Turtle('square')
+        new.color('green')
+        new.penup()
+        new.hideturtle()
+        self.segments.append(new)
+
         screen.update()
 
     def move(self):
+        self.segments[-1].showturtle()
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
@@ -44,8 +52,8 @@ class Snake:
             self.segments[0].setheading(180)
 
     def check_wall(self):
-        if self.segments[0].xcor() == 300 or self.segments[0].xcor() == -300 or \
-                self.segments[0].ycor() == 300 or self.segments[0].ycor() == -300:
+        if self.segments[0].xcor() >= 300 or self.segments[0].xcor() <= -290 or \
+                self.segments[0].ycor() >= 300 or self.segments[0].ycor() <= -290:
             return False
         else:
             return True
